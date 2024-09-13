@@ -1,6 +1,6 @@
 import { swapiService } from '../service/swapiService';
 import { Person } from '../types/swapi';
-import staticCharactersData from "../assets/data/characters.ts"
+import staticCharactersDataEn from "../assets/data/charactersEn.ts"
 
 const STORAGE_KEY = 'SWCotD';
 const DATE_KEY = 'SWCotDDate';
@@ -18,10 +18,11 @@ export async function getCharacterOfTheDay(): Promise<Person> {
     // Since the API provides only text, we are complementing the API with our own static images (only 13 images) to make better interface.
     // Only Star Wars characters that have our image will be randomly fetched.
     // Normally we would fetch all people and use that number to pick random one (API has 82 characters)
-    const randomIndex = Math.floor(Math.random() * staticCharactersData.length);
-    const randomCharacterWithStaticImage = staticCharactersData[randomIndex]
+    const randomIndex = Math.floor(Math.random() * staticCharactersDataEn.length);
 
-    const data = await swapiService.getPerson(randomCharacterWithStaticImage.id.toString());
+    const randomCharacterWithStaticImageEn = staticCharactersDataEn[randomIndex]
+
+    const data = await swapiService.getPerson(randomCharacterWithStaticImageEn.id.toString());
 
     if (!data) {
       throw new Error('No characters found');
@@ -29,9 +30,9 @@ export async function getCharacterOfTheDay(): Promise<Person> {
 
     const selectedCharacter = {
       ...data,
-      quote: randomCharacterWithStaticImage.quote,
-      description: randomCharacterWithStaticImage.description,
-      id: randomCharacterWithStaticImage.id.toString(),
+      quote: randomCharacterWithStaticImageEn.quote,
+      description: randomCharacterWithStaticImageEn.description,
+      id: randomCharacterWithStaticImageEn.id.toString(),
     };
 
     try {

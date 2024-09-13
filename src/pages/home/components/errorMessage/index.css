@@ -1,0 +1,11 @@
+.error-wrapper {
+    min-height: 300px;
+    width: 80%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    color: rgba(227, 62, 59, 1);
+    font-size: 20px;
+    font-family: "Rajdhani";
+    font-weight: 700;
+}

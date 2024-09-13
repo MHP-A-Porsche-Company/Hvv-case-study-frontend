@@ -16,5 +16,6 @@
   "stop narration": "Stop narration",
   "start narration": "Start narration",
   "your star wars": "Your Star Wars",
-  "character of the day": "Character of<1/>the Day"
+  "character of the day": "Character of<1/>the Day",
+  "Failed to fetch character.": "Failed to fetch character."
 }

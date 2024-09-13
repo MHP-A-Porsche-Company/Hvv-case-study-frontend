@@ -1,7 +1,7 @@
 const SkeletonLoader = () => {
   return (
     <div className="p-14 space-y-10">
-      <div className="space-y-4" style={{marginTop: "18px"}}>
+      <div className="space-y-4" style={{marginTop: "10px"}}>
         <div className="h-10 bg-gray-900 rounded w-3/4 animate-pulse"/>
         <div className="h-6 bg-gray-900 rounded w-1/2 animate-pulse"/>
       </div>

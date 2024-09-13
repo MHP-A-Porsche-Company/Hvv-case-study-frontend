@@ -7,6 +7,7 @@ import CharacterImage from "./components/characterImage";
 import CharacterInfo from "./components/characterInfo";
 import {LanguageSwitcher} from "./components/languageSwitcher";
 import "./home.css"
+import ErrorMessage from "./components/errorMessage";
 
 const Home: React.FC = () => {
   const [character, setCharacter] = useState<Person>();
@@ -20,7 +21,7 @@ const Home: React.FC = () => {
         setCharacter(character);
       }
     } catch {
-      setError('Failed to fetch people.');
+      setError('Failed to fetch character.');
     } finally {
       setLoading(false);
     }
@@ -31,13 +32,16 @@ const Home: React.FC = () => {
   }, [fetchPeople]);
 
   return (
-    <div className="flex flex-col min-h-screen home-container items-center" style={{backgroundImage: `url(${background})`}}>
+    <div className="flex flex-col min-h-screen home-container items-center"
+         style={{backgroundImage: `url(${background})`}}>
       <Heading/>
-      <div className="grid grid-cols-12 rounded-lg overflow-hidden card-wrapper">
-        {error && <div>Error: {error}</div>}
-        <CharacterImage character={character} />
-        <CharacterInfo character={character} loading={loading} />
-      </div>
+      {error ? <ErrorMessage error={error}/> : <>
+        <div className="grid grid-cols-12 rounded-lg overflow-hidden card-wrapper">
+          <CharacterImage character={character}/>
+          <CharacterInfo character={character} loading={loading}/>
+        </div>
+      </>
+      }
       <LanguageSwitcher/>
     </div>
   );

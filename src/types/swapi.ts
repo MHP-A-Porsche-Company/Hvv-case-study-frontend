@@ -16,6 +16,7 @@ export interface Person {
   gender: string;
   description: string;
   id: string;
+  quote: string;
 }
 
 export interface Film {

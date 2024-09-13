@@ -15,6 +15,7 @@
   "about": "Über",
   "stop narration": "Erzählen stoppen",
   "start narration": "Erzählung beginnen",
-  "your star wars": "Deine Star Wars",
-  "character of the day": "Charakter des<1/>Tages"
+  "your star wars": "Dein Star Wars",
+  "character of the day": "Charakter des<1/>Tages",
+  "Failed to fetch character.": "Zeichen konnte nicht abgerufen werden."
 }
