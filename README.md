@@ -44,7 +44,34 @@ Or using Yarn:
 yarn
  ```
 
+### Running the Application
+#### Development Mode
 
+Start the development server with hot reloading:
+
+```
+npm run dev
+```
+Or with yarn:
+
+```
+yarn dev
+```
+Open your browser and navigate to http://localhost:3000 to view the application.
+
+## Production Build
+To build and serve the application for production:
+
+```
+npm run build
+npm run preview
+```
+Or with yarn:
+
+```
+yarn build
+yarn preview
+```
 
 
 
@@ -88,7 +115,7 @@ _Note: A more secure approach would be to use the **Authorization Code Flow with
 3. **Token Validation**: Optionally, validate the token with the IdP's token introspection endpoint to ensure it's still valid.
 
    ```javascript
-   fetch(`https://idp.example.com/token/introspect`, {
+   fetch(`https://idp.vvh.com/token/validate`, {
        method: 'POST',
        headers: {
        'Authorization': `Bearer ${localStorage.getItem('access_token')}`
