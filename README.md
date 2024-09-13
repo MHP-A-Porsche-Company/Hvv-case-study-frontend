@@ -61,7 +61,9 @@ Integrate the application with hvv's existing Identity Provider (IdP) using stan
 
 ### 2. Authentication Flow
 
-Implement an authentication flow using **OAuth 2.0**. This will involve redirecting hvv employees to the Identity Provider's login page, and upon successful login, the IdP will issue a token back to the client application. The steps involved are as follows:
+Implement an authentication flow (**Implicit Flow**) using **OAuth 2.0**. This will involve redirecting hvv employees to the Identity Provider's login page, and upon successful login, the IdP will issue a token back to the client application. The steps involved are as follows:
+
+_Note: A more secure approach would be to use the **Authorization Code Flow with Proof Key for Code Exchange (PKCE)** if the Single Sign-On (SSO) service supports it._
 
 1. **Authorization Request**: When the user clicks "Login," the application redirects to the IdP authorization endpoint. This redirect includes the **clientId** and **redirect_uri** (callback URL) parameters.
 
@@ -119,7 +121,7 @@ Certain routes and features should be accessible only after the user is authenti
 
 To securely manage user sessions:
 
-- **Token Storage**: Store the token in **localStorage** or **sessionStorage** to persist the user session across page reloads. For higher security, consider using **HttpOnly** cookies.
+- **Token Storage**: Store the token in **localStorage** or **sessionStorage** to persist the user session across page reloads. For higher security, consider using **HttpOnly** cookies or **In-memory** storage.
 - **Session Expiry**: Implement token expiration handling. Most tokens will have an expiration time (often in the token's payload or returned by the IdP). Use this expiration to log out users automatically when the session ends.
 
     ```javascript
