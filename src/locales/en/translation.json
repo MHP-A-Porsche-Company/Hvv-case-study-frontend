@@ -1,0 +1,20 @@
+{
+  "title": "Star Wars Character of the Day",
+  "loading": "Loading...",
+  "error": "Error: {{message}}",
+  "refreshButton": "Refresh Character",
+  "height": "Height",
+  "mass": "Mass",
+  "hairColor": "Hair Color",
+  "eyeColor": "Eye Color",
+  "cm": "cm",
+  "kg": "kg",
+  "year of birth": "Year of birth",
+  "gender": "Gender",
+  "quickstats": "Quickstats",
+  "about": "About",
+  "stop narration": "Stop narration",
+  "start narration": "Start narration",
+  "your star wars": "Your Star Wars",
+  "character of the day": "Character of<1/>the Day"
+}

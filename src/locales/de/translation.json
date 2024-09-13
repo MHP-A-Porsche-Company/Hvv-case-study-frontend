@@ -1,0 +1,20 @@
+{
+  "title": "Star Wars Charakter des Tages",
+  "loading": "Lädt...",
+  "error": "Fehler: {{message}}",
+  "refreshButton": "Charakter aktualisieren",
+  "height": "Größe",
+  "mass": "Gewicht",
+  "hairColor": "Haarfarbe",
+  "eyeColor": "Augenfarbe",
+  "cm": "cm",
+  "kg": "kg",
+  "year of birth": "Geburtsjahr",
+  "gender": "Geschlecht",
+  "quickstats": "Schnellstatistiken",
+  "about": "Über",
+  "stop narration": "Erzählen stoppen",
+  "start narration": "Erzählung beginnen",
+  "your star wars": "Deine Star Wars",
+  "character of the day": "Charakter des<1/>Tages"
+}
