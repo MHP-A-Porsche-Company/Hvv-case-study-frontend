@@ -1,0 +1,13 @@
+.home-container {
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-wrapper {
+    min-height: 600px;
+    width: 80%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.85);
+}

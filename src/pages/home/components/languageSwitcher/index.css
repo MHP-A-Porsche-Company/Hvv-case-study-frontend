@@ -1,0 +1,9 @@
+.lang-item {
+    font-family: "Rajdhani";
+    font-weight: 700;
+    cursor: pointer;
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+}
