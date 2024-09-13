@@ -23,7 +23,7 @@ React/TypeScript application that displays a randomly selected Star Wars charact
 
 ### Prerequisites
 
-- **Node.js** (version 15 or above)
+- **Node.js** (version 18.5 or above)
 - **npm** or **yarn** package manager
 
 ### Installation
