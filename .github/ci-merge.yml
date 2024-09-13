@@ -1,0 +1,71 @@
+name: CI for Dev Branch with Docker Build (GitHub Container Registry)
+
+# Trigger the workflow on pull requests to the dev branch and pushes to dev
+on:
+  pull_request:
+    branches:
+      - dev
+  push:
+    branches:
+      - dev
+
+jobs:
+  build-and-test:
+    name: Build and Test Application
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      # Set up a language environment (adjust for your app)
+      # Example: for a Node.js app
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run tests
+      - name: Run tests
+        run: npm test
+
+  # The following job is commented out because we are not yet using a specific container registry.
+  # example is based on GitHub Container Registry (GHCR). Uncomment if needed
+
+  # build-and-push-docker:
+  #   name: Build and Push Docker Image to GHCR
+  #   needs: build-and-test
+  #   runs-on: ubuntu-latest
+  #   if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+
+  #   steps:
+  #     # Checkout the code
+  #     - name: Checkout code
+  #       uses: actions/checkout@v3
+
+  #     # Log in to GitHub Container Registry (GHCR)
+  #     - name: Log in to GitHub Container Registry
+  #       uses: docker/login-action@v2
+  #       with:
+  #         registry: ghcr.io
+  #         username: ${{ github.actor }}
+  #         password: ${{ secrets.GITHUB_TOKEN }}
+
+  #     # Build Docker image
+  #     - name: Build Docker image
+  #       run: docker build -t ghcr.io/<owner>/<image-name>:latest .
+
+  #     # Tag the Docker image (optional step, the build command already tags it)
+  #     - name: Tag Docker image
+  #       run: docker tag ghcr.io/<owner>/<image-name>:latest ghcr.io/<owner>/<image-name>:latest
+
+  #     # Push Docker image to GHCR
+  #     - name: Push Docker image to GitHub Container Registry
+  #       run: docker push ghcr.io/<owner>/<image-name>:latest
+
+
