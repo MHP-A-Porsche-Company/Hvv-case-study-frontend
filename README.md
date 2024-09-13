@@ -1,5 +1,7 @@
 # Star Wars Character of the Day
 
+![App Screenshot](./src/assets/appScreenshot.png)
+
 React/TypeScript application that displays a randomly selected Star Wars character each day using data from the [Star Wars API (SWAPI)](https://swapi.dev/). Each user sees the same character throughout the day, but different users may see different characters on the same day.
 
 ## Features
