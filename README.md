@@ -8,7 +8,7 @@ React/TypeScript application that displays a randomly selected Star Wars charact
 
 - **Daily Character Display**: Presents a new Star Wars character to the user each day.
 - **Profile Page Design**: Offers an appealing and responsive profile page for each character.
-- **Persistent Character of the Day**: Ensures the displayed character remains the same for the user throughout the day.
+- **Persistent Character of the Day**: Ensures the displayed character remains the same for the user throughout the day (caching is utilised).
 - **Unique per User**: Different users may receive different characters on the same day.
 - **Audio narration**: Ability to listen character description text for better accessibility. 
 - **Multilingual support**: App supports English and German language translation. 
