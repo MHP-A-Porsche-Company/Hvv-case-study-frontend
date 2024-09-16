@@ -3,7 +3,13 @@ import { describe, it, expect, vi } from 'vitest'
 import CharacterInfo from '../../components/characterInfo'
 
 vi.mock('react-i18next', () => ({
-  useTranslation: () => ({ t: (key: string) => key }),
+  useTranslation: () => ({
+    t: (key: string) => key,
+    i18n: {
+      language: 'en',
+      changeLanguage: () => new Promise(() => {}), // Mock changeLanguage method
+    }
+  }),
 }))
 
 describe('StarWarsCharacter', () => {
